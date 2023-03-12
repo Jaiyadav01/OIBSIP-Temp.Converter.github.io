@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>temp converter</title>
+        <link href="css/all.css" rel="stylesheet"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    </head>
+    <style>
+        #outer{
+            height: 100%;
+            background-color:#f3f6fa;
+            border: 1px solid black;
+
+        }
+        #inner{
+            height:400px;
+            width: 390px;
+            border: 2px solid black;
+            margin: auto;
+            margin-top: 100px;
+            background-color:white;
+            border-radius: 30px;
+        }
+        #res{
+            margin: 2px;
+        }
+        #btn{
+            background-color: blue;
+            margin-top: 20px;
+            color: white;
+            padding: 7px;
+            border-radius: 15px;
+            margin-left: 10px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+
+        }
+
+    </style>
+    <body>
+        <div id="outer">
+            
+            <div id="inner" class="container">
+                <div style="padding-left: 50px; font-size: 25px; padding-top: 20px;"> Temperature Converter</div><br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>Degrees</h3>
+                        <input type="number" id="num" step="any">
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Type</h3>
+                        <select name="" id="temp">
+                            <option value="cel">Celcius</option>
+                            <option value="fah">Fahrenheit</option>
+                        </select>
+                    </div><br><br><br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h3>Result</h3>
+                            <input type="" id="res" readonly=""/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button id="btn" onclick="con()">Convert</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
+
+
+    <script type="text/javascript">
+        function con(){
+            
+            var x = document.getElementById("num").value;
+            var temp = document.getElementById("temp").value;
+            if(temp=="cel"){
+                var res= (parseInt(x)*1.8) +32 +"   ˚F";
+                
+            }
+            if(temp == "fah"){
+                var res = (parseInt(x)-32)*.5556 +"   ˚C";
+               
+            }
+            document.getElementById("res").value = res;
+        }
+    </script>
+</html>
